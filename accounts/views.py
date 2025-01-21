@@ -42,10 +42,7 @@ class ProfileView(viewsets.ModelViewSet):
         gender = self.request.query_params.get('gender', None)
 
         if user_id:
-            queryset = queryset.filter(user_id=user_id)  
-
-        if blood:
-            queryset = queryset.filter(blood=blood) 
+            queryset = queryset.filter(user_id=user_id)   
 
         return queryset
     
@@ -129,7 +126,7 @@ class UserRegistrationApiView(APIView):
             email = serializer._validated_data['email']
             if User.objects.filter(email=email).exists():
                 return Response({'auth':f"[{email} \n] Email already exist!"})
-            
+ 
             if User.objects.filter(username=username).exists():
                 return Response({'auth':f"[{username}] Username already exist!"})
             
