@@ -1,0 +1,17 @@
+distlib
+dj-database-url
+Django
+django-captcha
+django-cors-headers
+django-crispy-forms
+django-environ
+django-filter
+djangorestframework
+environ
+env
+pillow   
+psycopg2
+psycopg2-binary
+whitenoise
+
+ 
