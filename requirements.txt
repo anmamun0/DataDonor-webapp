@@ -8,10 +8,6 @@ django-environ
 django-filter
 djangorestframework
 environ
-env
-pillow   
-psycopg2
+pillow
 psycopg2-binary
 whitenoise
-
- 
