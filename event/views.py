@@ -48,6 +48,7 @@ class EventView(viewsets.ModelViewSet):
         # Extract data from the request body
         user_id = request.data.get('user')
         title = request.data.get('title')
+        location = request.data.get('location', '')
         description = request.data.get('description', '')
         event_date = request.data.get('event_date', None)
         event_time = request.data.get('event_time', None)
@@ -65,6 +66,7 @@ class EventView(viewsets.ModelViewSet):
                 event_date=event_date,
                 event_time=event_time,
                 blood=blood,
+                location=location
             ) 
             profile_users = Profile.objects.filter(blood=event.blood)
             current_date = datetime.now().strftime("%B %d %Y") 

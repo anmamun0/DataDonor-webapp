@@ -15,7 +15,7 @@ class Profile(models.Model):
     
     user = models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile')
     # image = models.ImageField(upload_to='accounts/media/images',null=True,blank=True)
-    image = models.URLField(max_length=30,null=True,blank=True,default=None)
+    image = models.URLField(max_length=200,null=True,blank=True,default=None)
     # image = models.CharField(max_length=30,null=True,blank=True)
 
     age = models.IntegerField(null=True,blank=True)

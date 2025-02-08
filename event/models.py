@@ -11,8 +11,8 @@ class Event(models.Model):
     doner = models.ForeignKey(User,on_delete=models.SET_NULL,blank=True,null=True,related_name='doner')
     doner_message = models.TextField(blank=True,null=True,default=None)
 
-    title = models.CharField(max_length=27)
-    location = models.CharField(max_length=50,null=True)
+    title = models.CharField(max_length=150)
+    location = models.CharField(max_length=150,null=True,blank=True)
     blood = models.CharField(max_length=10,choices=BLOOD_GROUP)
     description = models.TextField()
     event_date = models.DateField()
