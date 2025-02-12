@@ -150,7 +150,7 @@ class EventView(viewsets.ModelViewSet):
             'time': current_date,
             'location': event.location, 
         }
-        body = render_to_string('email.html',context) # Adds alternative HTML content 
+        body = render_to_string('email_received_blood.html',context) # Adds alternative HTML content 
 
         email = EmailMultiAlternatives(
             subject="Login successful",
@@ -159,10 +159,7 @@ class EventView(viewsets.ModelViewSet):
             to = [event.doner.email],
         )
         email.attach_alternative(body, "text/html")
-        email.send()
-
-
- 
+        email.send() 
         serializer = EventSerializer(event)
         return Response(serializer.data,status=status.HTTP_202_ACCEPTED)
 
